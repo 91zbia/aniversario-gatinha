@@ -6,13 +6,14 @@
 
     <style>
       body {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         background: #ffa7bc;
         font-family: "Montserrat", sans-serif;
-        overflow: hidden;
+        overflow-x: hidden;
+        padding: 20px;
       }
 
       .back {
@@ -23,6 +24,7 @@
         color: white;
         text-decoration: none;
         cursor: pointer;
+        z-index: 10;
       }
 
       .back:hover {
@@ -41,20 +43,26 @@
 
         animation: dance 2s ease-in-out infinite;
       }
-
-      @keyframes dance {
+      .open.envelope {
+        animation: none;
+      }
+       @keyframes dance {
         0% {
           transform: rotate(0) scale(0.9);
         }
+
         25% {
           transform: rotate(5deg) scale(1);
         }
+
         50% {
           transform: rotate(-5deg) scale(1.05);
         }
+
         75% {
           transform: rotate(3deg) scale(1);
         }
+
         100% {
           transform: rotate(0) scale(1);
         }
@@ -84,8 +92,12 @@
       .letter {
         position: absolute;
         width: 85%;
-        height: 170px;
+        max-height: 400px;
+
+        overflow-y: auto;
+
         background: #fffaf3;
+
         left: 50%;
         transform: translateX(-50%) translateY(80px);
 
@@ -93,7 +105,9 @@
 
         padding: 20px;
         border-radius: 10px;
+
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
         transition: 0.8s;
         z-index: 1;
       }
@@ -106,6 +120,7 @@
       .letter p {
         font-size: 14px;
         color: #6b5a4a;
+        line-height: 1.6;
       }
 
       .open .top {
@@ -113,23 +128,23 @@
       }
 
       .open .letter {
-        transform: translateX(-50%) translateY(-60px);
+        transform: translateX(-50%) translateY(-180px);
         opacity: 1;
       }
 
       @media (max-width: 768px) {
-        body {
-          padding: 20px;
-        }
-
         .envelope {
           transform: scale(0.8);
         }
 
         .letter {
-          height: auto;
-          min-height: 170px;
+          width: 95%;
+          max-height: 350px;
           font-size: 13px;
+        }
+
+        .open .letter {
+          transform: translateX(-50%) translateY(-220px);
         }
       }
     </style>
@@ -145,8 +160,18 @@
       <div class="letter">
         <h3>Pra você</h3>
         <p>
-          Eu fiz isso aqui com carinho só pra você. Pode não ser perfeito, mas é
-          bem sincero.
+          Quando eu era mais nova, lembro de ter lido um versículo muito famoso
+          na Bíblia, 1 Coríntios 13:4-7, que falava sobre o amor, e eu me lembro
+          bem de não ter compreendido, porque nunca senti esse tipo de amor, não
+          até te encontrar. Nosso amor consegue ser tudo o que aquela passagem
+          fala. Mesmo tendo minhas confusões internas sobre a existência de
+          Deus, sou extremamente grata a Ele por ter te colocado no meu caminho,
+          porque foi graças a você que eu pude sentir o que é sentir amor sem
+          ter que sentir dor. Senti que o amor pode ser sinônimo de paz, porque
+          é com você que eu sinto paz, leveza e a pureza de um amor genuíno.
+          Obrigada por ser o meu amor, me mostrar que posso, sim, ser amada de
+          verdade e por me ensinar diariamente sobre o amor. Obs.: a carta de
+          verdade é física!
         </p>
       </div>
     </div>
