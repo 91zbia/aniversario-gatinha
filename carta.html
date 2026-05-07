@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carta</title>
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffa7bc;
+        font-family: "Montserrat", sans-serif;
+        overflow: hidden;
+      }
+
+      .back {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 40px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .back:hover {
+        transform: scale(1.1);
+      }
+
+      .envelope {
+        position: relative;
+        width: 320px;
+        height: 220px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation: dance 2s ease-in-out infinite;
+      }
+
+      @keyframes dance {
+        0% {
+          transform: rotate(0) scale(0.9);
+        }
+        25% {
+          transform: rotate(5deg) scale(1);
+        }
+        50% {
+          transform: rotate(-5deg) scale(1.05);
+        }
+        75% {
+          transform: rotate(3deg) scale(1);
+        }
+        100% {
+          transform: rotate(0) scale(1);
+        }
+      }
+
+      .base {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #d8c3a5;
+        border-radius: 8px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .top {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #e5d2b8;
+        clip-path: polygon(0 0, 50% 60%, 100% 0);
+        transform-origin: top;
+        transition: 0.8s;
+        backface-visibility: hidden;
+        z-index: 2;
+      }
+
+      .letter {
+        position: absolute;
+        width: 85%;
+        height: 170px;
+        background: #fffaf3;
+        left: 50%;
+        transform: translateX(-50%) translateY(80px);
+
+        opacity: 0;
+
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        transition: 0.8s;
+        z-index: 1;
+      }
+
+      .letter h3 {
+        margin-bottom: 10px;
+        color: #5c4b3b;
+      }
+
+      .letter p {
+        font-size: 14px;
+        color: #6b5a4a;
+      }
+
+      .open .top {
+        transform: rotateX(180deg);
+      }
+
+      .open .letter {
+        transform: translateX(-50%) translateY(-60px);
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+        }
+
+        .envelope {
+          transform: scale(0.8);
+        }
+
+        .letter {
+          height: auto;
+          min-height: 170px;
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="back">❮</a>
+
+    <div class="envelope" id="env">
+      <div class="base"></div>
+      <div class="top"></div>
+
+      <div class="letter">
+        <h3>Pra você</h3>
+        <p>
+          Eu fiz isso aqui com carinho só pra você. Pode não ser perfeito, mas é
+          bem sincero.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const env = document.getElementById("env");
+
+      let liberado = false;
+
+      setTimeout(() => {
+        liberado = true;
+      }, 2000);
+
+      env.addEventListener("click", () => {
+        if (!liberado) return;
+
+        env.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

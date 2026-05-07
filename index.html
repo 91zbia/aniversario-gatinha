@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>aniversário da gatinha</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Dia da Gatinha</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="carta.html">Carta</a></li>
+          <li><a href="musica.html">Músicas</a></li>
+          <li><a href="fotos.html">Fotos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="list">
+        <div class="item active">
+          <div class="img-box">
+            <img src="./img/bolosnoop.png" />
+          </div>
+
+          <div class="content">
+            <h2>Feliz aniversário meu amor!</h2>
+
+            <p>
+              Fiz esse site especialmente para você, espero muito que goste dele. 
+              Confesso que foi difícil escolher o que colocar aqui, mas tentei fazer algo bem a sua cara (meio rosa ok)!
+            </p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-box">
+            <img src="./img/umacartasnoop.png" />
+          </div>
+
+          <div class="content">
+            <h2>Carta</h2>
+
+            <p>Eu escrevi um pouquinho, mas nada grandioso igual a de verdade.</p>
+            <a href="carta.html"><button>Ver mais</button></a>
+
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-box">
+            <img src="./img/vinilsnoop.png" />
+          </div>
+
+          <div class="content">
+            <h2>Músicas</h2>
+
+            <p>Algumas músicas que me lembram você.</p>
+            <a href="musica.html"><button>Ver mais</button></a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-box">
+            <img src="./img/fotosnoop.png" />
+          </div>
+
+          <div class="content">
+            <h2>Fotos</h2>
+
+            <p>Como eu vejo você.</p>
+            <a href="fotos.html"><button>Ver fotos</button></a>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow left" id="prev">❮</button>
+      <button class="arrow right" id="next">❯</button>
+
+      <div class="indicators">
+        <div class="number">01</div>
+
+        <div class="dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

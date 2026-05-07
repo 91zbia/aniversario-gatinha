@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opa meu contato</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 30px;
+        background: #ffa7bc;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: white;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: white;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      .contact {
+        background: rgb(255, 119, 149);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .contact h2 {
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 30px;
+        background: #ff007b;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(29, 185, 84, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(29, 185, 84, 0.5);
+      }
+
+      .btn:active {
+        transform: scale(0.95);
+      }
+
+      .back {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 40px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .back:hover {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+          text-align: center;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .contact {
+          width: 95%;
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="back">❮</a>
+
+    <h1>Opa a parte que fica no final né claro</h1>
+
+    <p>
+      Você já sabe meu número, mas vou te passar meu link bem formal pra receber
+      uma mensagem pronta sua!
+    </p>
+
+    <div class="contact">
+      <h2>WhatsApp que eu acho que você já tem rs</h2>
+
+      <a
+        class="btn"
+        href="https://wa.me/5521995685328?text=oi%2C%20amor,%20eu%20te%20amo%20muito!"
+        target="_blank"
+      >
+        Me chama gatinha!
+      </a>
+    </div>
+  </body>
+</html>

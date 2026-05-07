@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>uou spotify calma ae</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      body {
+        padding-top: 100px;
+        text-align: center;
+      }
+
+      .player {
+        margin-bottom: 50px;
+      }
+
+      .vinil {
+        width: 150px;
+        animation: spin 5s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .song-list {
+        width: min(600px, 95%);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .song {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: white;
+        padding: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .song:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .song img {
+        width: 60px;
+        border-radius: 10px;
+      }
+
+      .song-info {
+        text-align: left;
+      }
+
+      .back {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 40px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .back:hover {
+        transform: scale(1.1);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 30px;
+        background: #ff007b;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(29, 185, 84, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(29, 185, 84, 0.5);
+      }
+
+      .btn:active {
+        transform: scale(0.95);
+      }
+
+      .playlist {
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding-top: 120px;
+          overflow-x: hidden;
+        }
+
+        .vinil {
+          width: 110px;
+        }
+
+        .song {
+          gap: 10px;
+          padding: 10px;
+        }
+
+        .song img {
+          width: 50px;
+        }
+
+        .song-info b {
+          font-size: 14px;
+        }
+
+        .song-info p {
+          font-size: 12px;
+        }
+
+        #tocando {
+          font-size: 1.2rem;
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="back">❮</a>
+    <div class="player">
+      <img src="img/vinilzao.png" class="vinil" id="vinil" />
+
+      <h2 id="tocando">Escolha uma música</h2>
+
+      <audio id="audio"></audio>
+    </div>
+
+    <div class="song-list">
+      <div
+        class="song"
+        onclick="playMusic('audio/aindabem.mp3', 'Ainda Bem - Marisa Monte')"
+      >
+        <img src="img/ainda bem.jpg" />
+        <div class="song-info">
+          <b>Ainda Bem</b>
+          <p>Marisa Monte</p>
+        </div>
+      </div>
+
+      <div
+        class="song"
+        onclick="playMusic('audio/pink matter.mp3', 'Pink Matter - Frank Ocean')"
+      >
+        <img src="img/pink.png" />
+        <div class="song-info">
+          <b>Pink Matter</b>
+          <p>Frank Ocean</p>
+        </div>
+      </div>
+
+      <div
+        class="song"
+        onclick="playMusic('audio/olha.mp3', 'Olha - Maria Bethânia')"
+      >
+        <img src="img/maria bethania.avif" />
+        <div class="song-info">
+          <b>Olha</b>
+          <p>Maria Bethânia</p>
+        </div>
+      </div>
+
+      <div class="song" onclick="playMusic('audio/tua.mp3', 'Tua - ANAVITÓRIA')">
+        <img src="img/tua.jpg" />
+        <div class="song-info">
+          <b>Tua</b>
+          <p>ANAVITÓRIA</p>
+        </div>
+      </div>
+
+      <div class="link playlist">
+        <a
+          href="https://open.spotify.com/playlist/5MJ4SfnHaiuxa4A2Qqbh0P?si=WVPzVtzdTeup5oiZWFhwyw&pt=60080e6dddafff0987f8111eac66e95f&pi=b2e2ofWYS9Gi1"
+          target="_blank"
+          class="btn"
+          >Ver playlist completa</a
+        >
+      </div>
+    </div>
+
+    <script>
+      let audio = document.getElementById("audio");
+      let tocando = document.getElementById("tocando");
+
+      function playMusic(src, nome) {
+        audio.src = src;
+        audio.play();
+
+        tocando.innerHTML = "Tocando: " + nome;
+      }
+    </script>
+  </body>
+</html>
